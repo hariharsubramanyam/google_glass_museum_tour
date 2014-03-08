@@ -25,7 +25,10 @@ public final class R {
         public static final int map=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f090005;
+        public static final int action_artist=0x7f090006;
+        public static final int action_related=0x7f090007;
+        public static final int action_repeat=0x7f090005;
+        public static final int action_save=0x7f090008;
         public static final int imageView=0x7f090001;
         public static final int imgMain=0x7f090003;
         public static final int img_map=0x7f090004;
@@ -38,15 +41,20 @@ public final class R {
         public static final int activity_map=0x7f030002;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int map_menu=0x7f080000;
+        public static final int recognize_main=0x7f080001;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
+        public static final int artist=0x7f060007;
         public static final int glass_voice_trigger=0x7f060004;
         public static final int hello_world=0x7f060002;
         public static final int map=0x7f060003;
         public static final int map_voice_trigger=0x7f060005;
+        public static final int related=0x7f060008;
+        public static final int repeat=0x7f060006;
+        public static final int save=0x7f060009;
     }
     public static final class style {
         /** 

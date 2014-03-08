@@ -20,6 +20,7 @@ import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -46,6 +47,8 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	private TextView mTextView;
 	private TextView mDescriptionTextView;
 	
+	private String mDescription;
+	
 	private TextToSpeech tts;
 	
 	@Override
@@ -55,7 +58,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		View v = getLayoutInflater().inflate(R.layout.activity_main, null, false);
 		mTextView = (TextView)v.findViewById(R.id.txtMain);
 		tts = new TextToSpeech(this,this);
-		//mGestureDetector = createGestureDetector(this);
+		mGestureDetector = createGestureDetector(this);
 		setContentView(v);
 		launchCameraIntent();
 	}
@@ -63,7 +66,16 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.recognize_main, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		if(item.getItemId() == R.id.action_repeat){
+			speakOut(mDescription);
+		}
 		return true;
 	}
 	
@@ -111,7 +123,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 					if(e == null){
 						if(displayList.size() > 0){
 							String displayName = displayList.get(0).getString("PaintingName");
-							String description = displayList.get(0).getString("PaintingDescription");
+							mDescription = displayList.get(0).getString("PaintingDescription");
 							byte[] imageBytes;
 							try {
 								imageBytes = ((ParseFile)(displayList.get(0).get("PaintingFile"))).getData();
@@ -119,7 +131,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 								ImageView image = (ImageView) findViewById(R.id.imgMain);
 								image.setImageBitmap(b);
 								mTextView.setText(displayName);
-								speakOut(description);
+								speakOut(mDescription);
 							} catch (ParseException e1) {
 								e1.printStackTrace();
 							}
@@ -154,8 +166,8 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 			@Override
 			public boolean onGesture(Gesture gesture) {
 				if(gesture == Gesture.TAP){
-					//openOptionsMenu();
-					launchCameraIntent();
+					openOptionsMenu();
+					//launchCameraIntent();
 					return true;
 				}
 				return false;
