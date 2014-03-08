@@ -50,7 +50,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		Parse.initialize(this, "T5MX9poDX17FyRxpHcWY746uKEqyDRvqr7Ao6uGU", "xyZuqyacGLyGbYjvUqTEhmFmQx910xcnUXhMcqkv");
+		Parse.initialize(this, APIKeys.PARSE_APP_ID, APIKeys.PARSE_APP_KEY);
 		super.onCreate(savedInstanceState);
 		View v = getLayoutInflater().inflate(R.layout.activity_main, null, false);
 		mTextView = (TextView)v.findViewById(R.id.txtMain);
