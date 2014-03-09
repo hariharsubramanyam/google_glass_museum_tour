@@ -45,16 +45,16 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	private static final String IMAGE_FILE_NAME = "/sdcard/ImageTest.jpg";
 	
 	private TextView mTextView;
-	private TextView mDescriptionTextView;
 	
 	private String mDescription;
+	private String mArtistID;
 	
 	private TextToSpeech tts;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		Parse.initialize(this, APIKeys.PARSE_APP_ID, APIKeys.PARSE_APP_KEY);
 		super.onCreate(savedInstanceState);
+		Parse.initialize(this, APIKeys.PARSE_APP_ID, APIKeys.PARSE_APP_KEY);
 		View v = getLayoutInflater().inflate(R.layout.activity_main, null, false);
 		mTextView = (TextView)v.findViewById(R.id.txtMain);
 		tts = new TextToSpeech(this,this);
@@ -72,9 +72,12 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// TODO Auto-generated method stub
 		if(item.getItemId() == R.id.action_repeat){
 			speakOut(mDescription);
+		}else if(item.getItemId() == R.id.action_artist){
+			Intent intent = new Intent(this, ArtistActivity.class);
+			intent.putExtra(ArtistActivity.EXTRA_ARTIST_ID, mArtistID);
+			startActivity(intent);
 		}
 		return true;
 	}
@@ -124,6 +127,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 						if(displayList.size() > 0){
 							String displayName = displayList.get(0).getString("PaintingName");
 							mDescription = displayList.get(0).getString("PaintingDescription");
+							mArtistID = displayList.get(0).getString("ArtistID");
 							byte[] imageBytes;
 							try {
 								imageBytes = ((ParseFile)(displayList.get(0).get("PaintingFile"))).getData();
