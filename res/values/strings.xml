@@ -3,7 +3,7 @@
 
     <string name="app_name">Hi Glass</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Tap to recognize image</string>
+    <string name="hello_world"> </string>
     <string name="map">Map</string>
     <string name="glass_voice_trigger">Explain display</string>
     <string name="map_voice_trigger">Show museum map</string>
