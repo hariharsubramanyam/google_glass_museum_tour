@@ -15,6 +15,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -24,6 +25,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.glass.touchpad.Gesture;
@@ -98,9 +100,8 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 			File f = new File(IMAGE_FILE_NAME);
 			if(f.exists()){
 				Bitmap b = BitmapFactory.decodeFile(IMAGE_FILE_NAME);
-				ImageView image = (ImageView) findViewById(R.id.imgMain);
-				image.setImageBitmap(b);
 				if(b != null){
+					((LinearLayout)findViewById(R.id.linear_main)).setBackgroundDrawable(new BitmapDrawable(getResources(),b));
 					if(ItraffApi.isOnline(this)){
 						ItraffApi api = new ItraffApi(APIKeys.API_ID, APIKeys.API_KEY, TAG, true);
 						ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -116,6 +117,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	private void onReceiveImageResponse(String response){
 		final String id;
 		try {
+			final Context context = this;
 			id = getIDFromAPIResponse(new JSONObject(response));
 			mTextView.setText(id);
 			ParseQuery<ParseObject> query = ParseQuery.getQuery("Painting");
@@ -132,8 +134,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 							try {
 								imageBytes = ((ParseFile)(displayList.get(0).get("PaintingFile"))).getData();
 								Bitmap b = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
-								ImageView image = (ImageView) findViewById(R.id.imgMain);
-								image.setImageBitmap(b);
+								((LinearLayout)findViewById(R.id.linear_main)).setBackgroundDrawable(new BitmapDrawable(getResources(),b));
 								mTextView.setText(displayName);
 								speakOut(mDescription);
 							} catch (ParseException e1) {
