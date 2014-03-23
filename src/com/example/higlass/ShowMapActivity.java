@@ -21,16 +21,13 @@ public class ShowMapActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		View v = getLayoutInflater().inflate(R.layout.activity_map, null);
-		mImg = (ImageView)v.findViewById(R.id.img_map);
-		mImg.setImageResource(R.drawable.map);
 		mGestureDetector = createGestureDetector(this);
 		setContentView(v);
 	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.recognize_main, menu);
-		return true;
+		return false;
 	}
 	
 	@Override

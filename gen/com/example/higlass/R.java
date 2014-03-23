@@ -29,12 +29,11 @@ public final class R {
         public static final int map=0x7f020001;
     }
     public static final class id {
-        public static final int action_artist=0x7f0a0006;
-        public static final int action_related=0x7f0a0007;
-        public static final int action_repeat=0x7f0a0005;
-        public static final int action_save=0x7f0a0008;
+        public static final int action_artist=0x7f0a0005;
+        public static final int action_related=0x7f0a0006;
+        public static final int action_repeat=0x7f0a0004;
+        public static final int action_save=0x7f0a0007;
         public static final int imageView=0x7f0a0001;
-        public static final int img_map=0x7f0a0004;
         public static final int linear_main=0x7f0a0002;
         public static final int surfaceView=0x7f0a0000;
         public static final int txtMain=0x7f0a0003;
