@@ -1,3 +1,8 @@
+/**
+ * Activity for displaying information about an artist and reading his/her biography out loud
+ * @author Harihar Subramanyam
+ */
+
 package com.example.higlass;
 
 import java.util.Locale;
@@ -10,7 +15,6 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,32 +27,73 @@ import com.parse.ParseQuery;
 
 public class ArtistActivity extends Activity implements TextToSpeech.OnInitListener{
 	
+	/**
+	 * Tag for logging
+	 */
 	private static final String TAG = ArtistActivity.class.getSimpleName();
+	
+	
+	/**
+	 * When this Activity is created, it receives an extra called "ARTIST_ID"
+	 */
 	public static final String EXTRA_ARTIST_ID = "ARTIST_ID";
+	
+	/**
+	 * Title text view which displays the artist name
+	 */
 	private TextView mTextView;
+	
+	/**
+	 * String which contains the artist's biography (spoken aloud by the text-to-speech service)
+	 */
 	private String mBio;
+	
+	/**
+	 * Manages the text to speech engine
+	 */
 	private TextToSpeech tts;
 	
+	/**
+	 * When the activity is created,
+	 * display the artist's picture, display his/her name,
+	 * and read aloud his/her biography
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		// Set up Parse (we use it to retrieve the artist's name and biography)
 		Parse.initialize(this, APIKeys.PARSE_APP_ID, APIKeys.PARSE_APP_KEY);
+		
+		// Set up the text to speech object
 		tts = new TextToSpeech(this,this);
+		
+		// Inflate the view and get the text field
 		View v = getLayoutInflater().inflate(R.layout.activity_main, null, false);
 		mTextView = (TextView)v.findViewById(R.id.txtMain);
+		
+		// From the intent that created this activity, retrieve the ARTIST_ID
 		String artistID = getIntent().getExtras().getString(EXTRA_ARTIST_ID);
-		Log.d(TAG, artistID);
+		
+		// Display the view
 		setContentView(v);
+		
+		// Now we must search Parse for the Artist who matches the ID we retrieved
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Artist");
 		query.getInBackground(artistID, new GetCallback<ParseObject>() {
 			@Override
 			public void done(ParseObject object, ParseException ex) {
 				if(ex == null){
 					try{
+						// Retrieve the name and display it in the text field
 						mTextView.setText(object.getString("Name"));
+						
+						// Retrieve the image and set it as the background
 						byte[] imageBytes = ((ParseFile)(object.get("Picture"))).getData();
 						Bitmap b = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
 						((LinearLayout)findViewById(R.id.linear_main)).setBackgroundDrawable(new BitmapDrawable(getResources(),b));
+						
+						// Read aloud the biography
 						mBio = object.getString("Bio");
 						speakOut(mBio);
 					}catch(Exception e){
@@ -61,6 +106,8 @@ public class ArtistActivity extends Activity implements TextToSpeech.OnInitListe
 		});
 	}
 	
+	
+	// THE FUNCTIONS BELOW ARE BASIC HOUSEKEEPING FOR THE TEXT TO SPEECH SERVICE
 	@Override
 	public void onInit(int status) {
 		if (status == TextToSpeech.SUCCESS) {

@@ -14,9 +14,20 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class ShowMapActivity extends Activity{
+	
+	/**
+	 * The image that displays the map of the museum
+	 */
 	ImageView mImg;
+	
+	/**
+	 * The gesture detector (displays the options menu when the user taps)
+	 */
 	private GestureDetector mGestureDetector;
 	
+	/**
+	 * When the activity is created, display the map
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,6 +54,9 @@ public class ShowMapActivity extends Activity{
 		return false;
 	}
 	
+	/**
+	 * On a tap, display the options menu
+	 */
 	private GestureDetector createGestureDetector(Context context){
 		GestureDetector gestureDetector = new GestureDetector(context);
 		gestureDetector.setBaseListener( new BaseListener() {

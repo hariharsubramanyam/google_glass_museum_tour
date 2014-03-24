@@ -1,3 +1,8 @@
+/**
+ * Activity for automatically recognizing a painting, displaying it, and reading a description of it out loud
+ * @author Harihar Subramanyam
+ */
+
 package com.example.higlass;
 
 import java.io.ByteArrayOutputStream;
@@ -24,7 +29,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -40,31 +44,74 @@ import com.parse.ParseQuery;
 
 public class MainActivity extends Activity implements TextToSpeech.OnInitListener{
 
+	/**
+	 * Use the class name as a tag when logging
+	 */
 	private static final String TAG = MainActivity.class.getSimpleName();
 	
+	/**
+	 * The gesture detector detects a tap so that we can display the context menu
+	 */
 	private GestureDetector mGestureDetector;
 	
+	/**
+	 * The user takes a picture which must be recognized, IMAGE_FILE_NAME is where the picture is stored on the device
+	 */
 	private static final String IMAGE_FILE_NAME = "/sdcard/ImageTest.jpg";
 	
+	
+	/**
+	 * Text view for displaying the name of the painting
+	 */
 	private TextView mTextView;
 	
+	/**
+	 * The description of the painting (read aloud by the text to speech service)
+	 */
 	private String mDescription;
+	
+	/**
+	 * The ID of the artist (retrieved so that the user can click the "Artist" option from the options menu and see info about the artist)
+	 */
 	private String mArtistID;
 	
+	/**
+	 * The text to speech service (used to read the painting description out loud to the user)
+	 */
 	private TextToSpeech tts;
 	
+	/**
+	 * When the activity is created, set up the gesture detector and text to speech, then take a picture of whatever the user is looking at
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		// Initialize Parse (we'll need it to look up information about the painting)
 		Parse.initialize(this, APIKeys.PARSE_APP_ID, APIKeys.PARSE_APP_KEY);
+		
+		// Inflate the view and retrieve its text field
 		View v = getLayoutInflater().inflate(R.layout.activity_main, null, false);
 		mTextView = (TextView)v.findViewById(R.id.txtMain);
+		
+		// Set up the text to speech and the gesture recognizer
 		tts = new TextToSpeech(this,this);
 		mGestureDetector = createGestureDetector(this);
+		
+		// Set the view
 		setContentView(v);
+		
+		// Launch the camera and take a picture of whatever the user is looking at (the callback is onActivityResult)
 		launchCameraIntent();
 	}
 
+	/**
+	 * The menu displays the following options
+	 * Repeat - read the painting description again
+	 * Artist - show a picture of the artist and read aloud his/her biography
+	 * Related - show paintings related to this one
+	 * Save - save this painting to my itinerary
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -72,11 +119,16 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		return true;
 	}
 	
+	/**
+	 * Handle menu selections
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if(item.getItemId() == R.id.action_repeat){
+			// Read the descriptino again
 			speakOut(mDescription);
 		}else if(item.getItemId() == R.id.action_artist){
+			// Launch an intent to get information about the artist with given ID
 			Intent intent = new Intent(this, ArtistActivity.class);
 			intent.putExtra(ArtistActivity.EXTRA_ARTIST_ID, mArtistID);
 			startActivity(intent);
@@ -84,6 +136,9 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		return true;
 	}
 	
+	/**
+	 * Lump all motion into one event
+	 */
 	@Override
 	public boolean onGenericMotionEvent(MotionEvent event) {
 		if(mGestureDetector != null){
@@ -92,18 +147,28 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		return false;
 	}
 	
+	/**
+	 * When the GlassSnapshotActivity returns a picture,
+	 * recognize the image using the Recognize.im API
+	 * then get the info for the recognized image from Parse
+	 * and display the info on the screen
+	 */
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if(requestCode == 1){
-			mTextView.setText("Got an image");
+			// IMAGE_FILE_NAME is where the image is stored
 			File f = new File(IMAGE_FILE_NAME);
 			if(f.exists()){
+				// Convert the file to a bitmap
 				Bitmap b = BitmapFactory.decodeFile(IMAGE_FILE_NAME);
 				if(b != null){
+					// Set the background of the screen to be the image
 					((LinearLayout)findViewById(R.id.linear_main)).setBackgroundDrawable(new BitmapDrawable(getResources(),b));
+					// If the ItraffApi (i.e. the Recognize.im API) is available,
 					if(ItraffApi.isOnline(this)){
-						ItraffApi api = new ItraffApi(APIKeys.API_ID, APIKeys.API_KEY, TAG, true);
+						// prepare the photo and send it to the API for recognition (the callback is onReceiveImageResponse)
+						ItraffApi api = new ItraffApi(APIKeys.ITRAFF_API_ID, APIKeys.ITRAFF_API_KEY, TAG, true);
 						ByteArrayOutputStream stream = new ByteArrayOutputStream();
 						b.compress(Bitmap.CompressFormat.JPEG, 100, stream);
 						byte[] pictureData = stream.toByteArray();
@@ -114,12 +179,17 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		}
 	}
 	
+	/**
+	 * When the Recognize.im API returns a response, look up the image on Parse and display it to the user
+	 */
 	private void onReceiveImageResponse(String response){
 		final String id;
 		try {
-			final Context context = this;
+			// Get the image ID
 			id = getIDFromAPIResponse(new JSONObject(response));
-			mTextView.setText(id);
+			mTextView.setText("Processing...");
+			
+			// Query Parse and get the info for the painting with the given id
 			ParseQuery<ParseObject> query = ParseQuery.getQuery("Painting");
 			query.whereEqualTo("RecognizeID", id);
 			query.findInBackground(new FindCallback<ParseObject>() {
@@ -127,15 +197,21 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 				public void done(List<ParseObject> displayList, ParseException e) {
 					if(e == null){
 						if(displayList.size() > 0){
+							// Get the info about the painting
 							String displayName = displayList.get(0).getString("PaintingName");
 							mDescription = displayList.get(0).getString("PaintingDescription");
 							mArtistID = displayList.get(0).getString("ArtistID");
 							byte[] imageBytes;
 							try {
+								// Set the painting as the background of the screen
 								imageBytes = ((ParseFile)(displayList.get(0).get("PaintingFile"))).getData();
 								Bitmap b = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
 								((LinearLayout)findViewById(R.id.linear_main)).setBackgroundDrawable(new BitmapDrawable(getResources(),b));
+								
+								// Display the painting's name
 								mTextView.setText(displayName);
+								
+								// Read aloud the description of the painting
 								speakOut(mDescription);
 							} catch (ParseException e1) {
 								e1.printStackTrace();
@@ -154,6 +230,9 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		}
 	}
 	
+	/**
+	 * Launch the GlassSnapshotActivity to get a picture from the camera
+	 */
 	private void launchCameraIntent(){
 		Intent intent = new Intent(this, GlassSnapshotActivity.class);
 		intent.putExtra("imageFileName", IMAGE_FILE_NAME);
@@ -165,6 +244,9 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		startActivityForResult(intent, 1);
 	}
 	
+	/**
+	 * Create a gesture detector that opens the options menu whenever the user taps
+	 */
 	private GestureDetector createGestureDetector(Context context){
 		GestureDetector gestureDetector = new GestureDetector(context);
 		gestureDetector.setBaseListener( new BaseListener() {
@@ -172,7 +254,6 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 			public boolean onGesture(Gesture gesture) {
 				if(gesture == Gesture.TAP){
 					openOptionsMenu();
-					//launchCameraIntent();
 					return true;
 				}
 				return false;
@@ -181,6 +262,9 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		return gestureDetector;
 	}
 	
+	/**
+	 * Process the data that comes back from the Recognize.im API and call the handler 
+	 */
 	@SuppressLint("HandlerLeak")
 	private Handler itraffApiHandler = new Handler(){
 		@Override
@@ -196,6 +280,9 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		};
 	};
 	
+	/**
+	 * The Recognize.im API returns a JSON object with the painting's ID - retreive that ID
+	 */
 	public String getIDFromAPIResponse(JSONObject json){
 		final String JSON_ID = "id";
 		final String JSON_STATUS = "status";
@@ -211,6 +298,9 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		}
 		return null;
 	}
+	
+	
+	// HOUSEKEEPING METHODS FOR THE TEXT TO SPEECH
 	
 	@Override
 	protected void onDestroy() {
