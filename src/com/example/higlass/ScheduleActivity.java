@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -19,6 +18,7 @@ import com.google.android.glass.touchpad.Gesture;
 import com.google.android.glass.touchpad.GestureDetector;
 import com.google.android.glass.touchpad.GestureDetector.BaseListener;
 import com.parse.GetCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
@@ -51,11 +51,18 @@ public class ScheduleActivity extends Activity{
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		Parse.initialize(this, APIKeys.PARSE_APP_ID, APIKeys.PARSE_APP_KEY);
 		super.onCreate(savedInstanceState);
 		mGestureDetector = createGestureDetector(this);
 		View v = getLayoutInflater().inflate(R.layout.activity_schedule, null);
 		this.mTextView = (TextView)v.findViewById(R.id.txt_schedule_item);
-		this.mIndex = getIntent().getExtras().getInt(ScheduleActivity.EXTRA_SCHEDULE_INDEX, 0);
+		
+		
+		if(getIntent() != null){
+			this.mIndex = getIntent().getExtras().getInt(ScheduleActivity.EXTRA_SCHEDULE_INDEX, 0);
+		}else{
+			this.mIndex = 0;
+		}
 		setContentView(v);
 		
 		this.mSchedule = new Schedule(this);

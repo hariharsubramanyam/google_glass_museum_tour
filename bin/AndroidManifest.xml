@@ -56,7 +56,13 @@
         
         <activity
             android:name="com.example.higlass.ScheduleActivity"
-            android:label="@string/app_name" />
+            android:label="@string/app_name" >
+        	<intent-filter> 
+        	<action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+        	</intent-filter>
+        	<meta-data android:name="com.google.android.glass.VoiceTrigger"
+            		   android:resource="@xml/schedule_trigger" />
+        </activity>
     </application>
 
 </manifest>
