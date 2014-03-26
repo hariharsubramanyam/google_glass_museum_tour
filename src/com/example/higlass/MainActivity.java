@@ -76,6 +76,11 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	private String mArtistID;
 	
 	/**
+	 * The ID of the painting (retreived so that the user can click the "Save" option from the options menu and add it to their schedule)
+	 */
+	private String mPaintingID;
+	
+	/**
 	 * The text to speech service (used to read the painting description out loud to the user)
 	 */
 	private TextToSpeech tts;
@@ -125,12 +130,18 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if(item.getItemId() == R.id.action_repeat){
-			// Read the descriptino again
+			// Read the description again
 			speakOut(mDescription);
 		}else if(item.getItemId() == R.id.action_artist){
 			// Launch an intent to get information about the artist with given ID
 			Intent intent = new Intent(this, ArtistActivity.class);
 			intent.putExtra(ArtistActivity.EXTRA_ARTIST_ID, mArtistID);
+			startActivity(intent);
+		}else if(item.getItemId() == R.id.action_save){
+			new Schedule(this).addPainting(this.mPaintingID);
+			Intent intent = new Intent(this, ScheduleActivity.class);
+			intent.putExtra(ScheduleActivity.EXTRA_SCHEDULE_INDEX, 0);
+			intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY);
 			startActivity(intent);
 		}
 		return true;
@@ -201,6 +212,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 							String displayName = displayList.get(0).getString("PaintingName");
 							mDescription = displayList.get(0).getString("PaintingDescription");
 							mArtistID = displayList.get(0).getString("ArtistID");
+							mPaintingID = displayList.get(0).getObjectId();
 							byte[] imageBytes;
 							try {
 								// Set the painting as the background of the screen
