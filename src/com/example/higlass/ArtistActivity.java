@@ -78,32 +78,19 @@ public class ArtistActivity extends Activity implements TextToSpeech.OnInitListe
 		// Display the view
 		setContentView(v);
 		
-		// Now we must search Parse for the Artist who matches the ID we retrieved
-		ParseQuery<ParseObject> query = ParseQuery.getQuery("Artist");
-		query.getInBackground(artistID, new GetCallback<ParseObject>() {
-			@Override
-			public void done(ParseObject object, ParseException ex) {
-				if(ex == null){
-					try{
-						// Retrieve the name and display it in the text field
-						mTextView.setText(object.getString("Name"));
-						
-						// Retrieve the image and set it as the background
-						byte[] imageBytes = ((ParseFile)(object.get("Picture"))).getData();
-						Bitmap b = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
-						((LinearLayout)findViewById(R.id.linear_main)).setBackgroundDrawable(new BitmapDrawable(getResources(),b));
-						
-						// Read aloud the biography
-						mBio = object.getString("Bio");
-						speakOut(mBio);
-					}catch(Exception e){
-						e.printStackTrace();
-					}
-				}else{
-					ex.printStackTrace();
-				}
-			}
-		});
+		// Retrieve the artist from the global data store
+		GlobalData globalData = GlobalData.getInstance(this);
+		Artist artist = globalData.getArtistForID(artistID);
+		
+		// Set the fields
+		mTextView.setText(artist.name);
+		mBio = artist.bio;
+		int drawableId = getResources().getIdentifier(artist.picture.replace(".jpeg", ""), "drawable", getPackageName());
+		findViewById(R.id.linear_main).setBackgroundResource(drawableId);		
+		// Read aloud the biography
+		speakOut(mBio);
+		
+		
 	}
 	
 	

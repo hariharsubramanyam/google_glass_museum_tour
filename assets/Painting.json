@@ -1,0 +1,569 @@
+{ "results": [
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "EFc2ehgnqv"
+        },
+        "ArtistID": "EFc2ehgnqv",
+        "PaintingDescription": "In May 1890, van Gogh moved from the south of France to Auvers, northwest of Paris, painting many of his finest pictures there in a feverish spurt of activity before his suicide in July. Houses at Auvers shows the landscape of early summer. The view from above creates a flattened tapestry of shapes in which the tiled and thatched roofs of the houses form a mesmerizing patchwork of color.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "f792110e-de91-45c9-8093-7778e5914d76-house_at_auvers.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/f792110e-de91-45c9-8093-7778e5914d76-house_at_auvers.jpeg"
+        },
+        "PaintingName": "Houses at Auvers",
+        "PaintingType": "Landscape",
+        "PaintingYear": 1890,
+        "RecognizeID": "i_531b3534a475c",
+        "createdAt": "2014-02-28T16:26:56.189Z",
+        "objectId": "DGa1axoSD4",
+        "updatedAt": "2014-03-09T13:52:08.859Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "on1vC5yOPz"
+        },
+        "ArtistID": "on1vC5yOPz",
+        "PaintingDescription": "Lower left: Claude Monet 89",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "8ebec8ab-3b5e-4ba3-b802-dcf907a9c78f-valley_of_the_creuse.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/8ebec8ab-3b5e-4ba3-b802-dcf907a9c78f-valley_of_the_creuse.jpeg"
+        },
+        "PaintingName": "Valley of the Creuse (Sunlight Effect)",
+        "PaintingType": "Landscape",
+        "PaintingYear": 1889,
+        "RecognizeID": "i_531b3548086be",
+        "createdAt": "2014-02-28T16:46:31.641Z",
+        "objectId": "xElpwhQKSX",
+        "updatedAt": "2014-03-09T13:50:30.081Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "0a6Q18Crlj"
+        },
+        "ArtistID": "0a6Q18Crlj",
+        "PaintingDescription": "This painting was one of the first works that Degas sold (in 1872) to Paul Durand-Ruel, the dealer who became the early champion of the Impressionists. It is not only a landscape but also a scene from everyday life and - most of all - a family portrait. The driver of the carriage is Degas's friend Paul Valpinçon, who is shown with his wife, a wet nurse, and in the nurse's lap, the couple's son, Henri. \n\nWith its subtly ironic title - the races play a minor role in the composition - the painting was among the artist's contributions to the first Impressionist exhibition in 1874.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "b87f6a9f-055e-4149-a479-88f4ab0381a6-at_the_races_in_the_countryside.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/b87f6a9f-055e-4149-a479-88f4ab0381a6-at_the_races_in_the_countryside.jpeg"
+        },
+        "PaintingName": "At the Races in the Countryside",
+        "PaintingType": "Genre - Exterior",
+        "PaintingYear": 1869,
+        "RecognizeID": "i_531b3523ac751",
+        "createdAt": "2014-02-28T16:38:10.765Z",
+        "objectId": "gMkq5Al0YF",
+        "updatedAt": "2014-03-09T13:51:55.184Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "0a6Q18Crlj"
+        },
+        "ArtistID": "0a6Q18Crlj",
+        "PaintingDescription": "Stamped, lower left: degas\n",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "21335a0a-f6d4-4815-8317-2eb24cfddb58-ballet_dancer_with_arms_crossed.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/21335a0a-f6d4-4815-8317-2eb24cfddb58-ballet_dancer_with_arms_crossed.jpeg"
+        },
+        "PaintingName": "Ballet Dancer with Arms Crossed",
+        "PaintingType": "Figure - Female",
+        "PaintingYear": 1872,
+        "RecognizeID": "i_531b352513c31",
+        "createdAt": "2014-02-28T16:35:58.312Z",
+        "objectId": "Tw4G4zoyzw",
+        "updatedAt": "2014-03-09T13:51:59.296Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "NYggKups0r"
+        },
+        "ArtistID": "NYggKups0r",
+        "PaintingDescription": "None",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "e670d897-6b14-458f-93ba-fcff0b487215-fruit_and_jug_on_a_table.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/e670d897-6b14-458f-93ba-fcff0b487215-fruit_and_jug_on_a_table.jpeg"
+        },
+        "PaintingName": "Fruit and a Jug on a Table",
+        "PaintingType": "Stil Life - Food\n",
+        "PaintingYear": 1890,
+        "RecognizeID": "i_531b352e68f91",
+        "createdAt": "2014-02-28T16:58:24.644Z",
+        "objectId": "0BRHIAmCF2",
+        "updatedAt": "2014-03-09T13:51:46.163Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "on1vC5yOPz"
+        },
+        "ArtistID": "on1vC5yOPz",
+        "PaintingDescription": "Lower left: Claude Monet 81\n",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "fe242b11-2415-4db8-ac57-e8ac0b6b7eaa-flower_beds_at_vetheuil.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/fe242b11-2415-4db8-ac57-e8ac0b6b7eaa-flower_beds_at_vetheuil.jpeg"
+        },
+        "PaintingName": "Flower Beds at Vétheuil",
+        "PaintingType": "Landscape",
+        "PaintingYear": 1881,
+        "RecognizeID": "i_531b352ce405b",
+        "createdAt": "2014-03-01T00:53:30.740Z",
+        "objectId": "8xq6GC3IHJ",
+        "updatedAt": "2014-03-09T13:50:20.181Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "on1vC5yOPz"
+        },
+        "ArtistID": "on1vC5yOPz",
+        "PaintingDescription": "In Vétheuil, a town farther down the Seine than Argenteuil and hence still untouched by signs of modernity, Monet painted no suburban gardens or sailboat regattas. A sweep of country road leading into the village, bordered by messy stretches of grasses and weeds sodden with melting snow, takes up the bottom half of the picture. The eye is not held by the colors and texture present in the foreground but rushes past, only to be stopped by the phalanx of houses constituting the village, their rectilinear forms hastily sketched in blue. Perspective here is exaggerated, with the point of view chosen so that the roadway covers what seems a disproportionate area of the canvas. Monet could have seen such a composition in nineteenth-century Japanese woodblock prints that were being imported in France in large numbers.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "d2022b27-306c-4a9a-b138-1c4efc8d4a83-Entrance_to_the_Village_of_Vetheuil_in_Winter.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/d2022b27-306c-4a9a-b138-1c4efc8d4a83-Entrance_to_the_Village_of_Vetheuil_in_Winter.jpeg"
+        },
+        "PaintingName": "Entrance to the Village of Vétheuil in Winter",
+        "PaintingType": "Landscape",
+        "PaintingYear": 1879,
+        "RecognizeID": "i_531b352b790fe",
+        "createdAt": "2014-02-28T16:50:26.589Z",
+        "objectId": "5aDEamNyZv",
+        "updatedAt": "2014-03-09T13:50:27.817Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "on1vC5yOPz"
+        },
+        "ArtistID": "on1vC5yOPz",
+        "PaintingDescription": "Monet’s series paintings of the 1890s—multiple variations of a single motif conceived, executed, and exhibited as a group—are among his most inventive and remarkable works. In the winter of 1892 the artist spent several months studying and painting the façade of Rouen Cathedral in his native Normandy. From rooms facing the cathedral across a square, Monet concentrated on the analysis of light and its effects on the forms of the façade, changing from one canvas to another as the day progressed. Later he extensively reworked the thirty paintings of the cathedral series in his studio at Giverny. Their encrusted surfaces of dry, thickly layered paint evoke the rough texture of weathered stone, absorbing and reflecting light like the walls of the cathedral itself.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "de9f1bb3-2086-4ce5-8929-a5cb24670951-rouen_cathedral.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/de9f1bb3-2086-4ce5-8929-a5cb24670951-rouen_cathedral.jpeg"
+        },
+        "PaintingName": "Rouen Cathedral, Façade",
+        "PaintingType": "Architectural",
+        "PaintingYear": 1894,
+        "RecognizeID": "i_531b35424a09d",
+        "createdAt": "2014-02-28T17:22:24.067Z",
+        "objectId": "coVf47geWQ",
+        "updatedAt": "2014-03-09T13:50:26.925Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "PuzyupVrEp"
+        },
+        "ArtistID": "PuzyupVrEp",
+        "PaintingDescription": "Caillebotte often painted Parisian men and women on the street or in their homes. Here a lone male bather inhabits a private space, devoid of decoration. Caillebotte painted both male and female nudes, but this composition was among his most ambitious. The artist may have turned to the subject after acquiring some of Edgar Degas’s female bathers of the 1870s.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "129b7689-cddc-4377-b32f-eb1592ca6bd1-man_at_his_bath.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/129b7689-cddc-4377-b32f-eb1592ca6bd1-man_at_his_bath.jpeg"
+        },
+        "PaintingName": "Man at His Bath\n",
+        "PaintingType": "Figure - Male",
+        "PaintingYear": 1884,
+        "RecognizeID": "i_531b353aa2fec",
+        "createdAt": "2014-03-01T00:49:49.840Z",
+        "objectId": "jyTcUWrsE8",
+        "updatedAt": "2014-03-09T13:51:25.564Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "on1vC5yOPz"
+        },
+        "ArtistID": "on1vC5yOPz",
+        "PaintingDescription": "As Monet grew older, his paintings became simpler. He began to focus on a single, isolated motif, the better to record the changes in color and light wrought on it by different times of day and fluctuations in weather. \"Cap d'Antibes, Mistral\" is one of three paintings of these very same trees that Monet made during his four-month sojourn in Antibes, from January through May 1888.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "c5c87d17-3912-46a2-aeca-b1fd313c3ab1-cap_d_antibes_mistral.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/c5c87d17-3912-46a2-aeca-b1fd313c3ab1-cap_d_antibes_mistral.jpeg"
+        },
+        "PaintingName": "Cap d'Antibes, Mistral",
+        "PaintingType": "Landscape - Seascape",
+        "PaintingYear": 1888,
+        "RecognizeID": "i_531b3527ccf3c",
+        "createdAt": "2014-03-01T00:59:48.950Z",
+        "objectId": "FmtcQuuKSG",
+        "updatedAt": "2014-03-09T13:50:18.652Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "on1vC5yOPz"
+        },
+        "ArtistID": "on1vC5yOPz",
+        "PaintingDescription": "Lower right: Claude Monet",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "6f265e45-da0c-411a-992e-7781ed6dac5e-ships_in_a_harbor.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/6f265e45-da0c-411a-992e-7781ed6dac5e-ships_in_a_harbor.jpeg"
+        },
+        "PaintingName": "Ships in a Harbor",
+        "PaintingType": "Landscape - Harbor",
+        "PaintingYear": 1873,
+        "RecognizeID": "i_531b354547a34",
+        "createdAt": "2014-03-01T01:03:48.494Z",
+        "objectId": "tY4pFg0bSj",
+        "updatedAt": "2014-03-09T13:50:17.394Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "2nlVKwxYZw"
+        },
+        "ArtistID": "2nlVKwxYZw",
+        "PaintingDescription": "Lower right: Renoir",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "d2528222-d425-4151-942b-388feb92d0bf-mixed_flowers_in_an_earthenware_pot.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/d2528222-d425-4151-942b-388feb92d0bf-mixed_flowers_in_an_earthenware_pot.jpeg"
+        },
+        "PaintingName": "Mixed Flowers in an Earthenware Pot",
+        "PaintingType": "Still Life - Floral",
+        "PaintingYear": 1869,
+        "RecognizeID": "i_531b353dd0342",
+        "createdAt": "2014-03-01T01:09:01.537Z",
+        "objectId": "STP3jObOoO",
+        "updatedAt": "2014-03-09T13:51:21.559Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "2nlVKwxYZw"
+        },
+        "ArtistID": "2nlVKwxYZw",
+        "PaintingDescription": "Lower right: Renoir. 83.\n",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "4c62bb32-85e9-4cb8-bbb7-a9047ea9f877-landscape_on_the_coast_near_menton.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/4c62bb32-85e9-4cb8-bbb7-a9047ea9f877-landscape_on_the_coast_near_menton.jpeg"
+        },
+        "PaintingName": "Landscape on the Coast, near Menton",
+        "PaintingType": "Landscape",
+        "PaintingYear": 1883,
+        "RecognizeID": "i_531b3537654b1",
+        "createdAt": "2014-03-01T01:13:20.246Z",
+        "objectId": "ITPadLNim0",
+        "updatedAt": "2014-03-09T13:51:18.897Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "0a6Q18Crlj"
+        },
+        "ArtistID": "0a6Q18Crlj",
+        "PaintingDescription": "Lower left: E Degas",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "fffd5e84-1089-4512-9205-fb2861b61212-racehorses_at_longchamp.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/fffd5e84-1089-4512-9205-fb2861b61212-racehorses_at_longchamp.jpeg"
+        },
+        "PaintingName": "Racehorses at Longchamp",
+        "PaintingType": "Genre - Exterior",
+        "PaintingYear": 1871,
+        "RecognizeID": "i_531b353f38ea9",
+        "createdAt": "2014-03-01T01:30:14.874Z",
+        "objectId": "GDRMlWOeNU",
+        "updatedAt": "2014-03-09T13:51:31.373Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "2nlVKwxYZw"
+        },
+        "ArtistID": "2nlVKwxYZw",
+        "PaintingDescription": "Lower left: Renoir",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "5d9df5c9-fcdb-4e83-b42f-b5910024c925-woman_with_a_parasol_and_a_small_child_on_a_sunlight_hillside.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/5d9df5c9-fcdb-4e83-b42f-b5910024c925-woman_with_a_parasol_and_a_small_child_on_a_sunlight_hillside.jpeg"
+        },
+        "PaintingName": "Woman with a Parasol and Small Child on a Sunlit Hillside",
+        "PaintingType": "Genre - Exterior",
+        "PaintingYear": 1874,
+        "RecognizeID": "i_531b354c49070",
+        "createdAt": "2014-03-01T01:39:20.165Z",
+        "objectId": "30bvVfB3rf",
+        "updatedAt": "2014-03-09T13:51:14.759Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "2nlVKwxYZw"
+        },
+        "ArtistID": "2nlVKwxYZw",
+        "PaintingDescription": "Lower right: Renoir. 81.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "af4f1e7f-3242-43d0-80d1-1516620db981-grand_canal_venice.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/af4f1e7f-3242-43d0-80d1-1516620db981-grand_canal_venice.jpeg"
+        },
+        "PaintingName": "Grand Canal, Venice",
+        "PaintingType": "Landscape - Cityscape",
+        "PaintingYear": 1881,
+        "RecognizeID": "i_531b353313c21",
+        "createdAt": "2014-03-01T01:42:21.344Z",
+        "objectId": "ipZnG86a5M",
+        "updatedAt": "2014-03-09T13:51:15.660Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "2nlVKwxYZw"
+        },
+        "ArtistID": "2nlVKwxYZw",
+        "PaintingDescription": "Stamped, lower right: Renoir",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "9145386a-d422-4b2b-bf99-10fef4d487e4-children_on_the_seashore_guernsey.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/9145386a-d422-4b2b-bf99-10fef4d487e4-children_on_the_seashore_guernsey.jpeg"
+        },
+        "PaintingName": "Children on the Seashore, Guernsey",
+        "PaintingType": "Genre - Exterior",
+        "PaintingYear": 1883,
+        "RecognizeID": "i_531b352a2f191",
+        "createdAt": "2014-03-01T01:51:23.489Z",
+        "objectId": "qVa81tOwy2",
+        "updatedAt": "2014-03-09T13:51:13.602Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "PuzyupVrEp"
+        },
+        "ArtistID": "PuzyupVrEp",
+        "PaintingDescription": "Caillebotte delighted in unusual vantage points and compositions. This close-up view of fruit stacked on a market stand creates a bold pattern of repeated forms and colors, while the sensuous brushstrokes suggest the lusciousness of the fruit. A loyal and well-to-do member of the Impressionist group, Caillebotte bequeathed his extensive painting collection to the state. It became the nucleus of the Impressionist collection now in the Musée d'Orsay, Paris.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "75e489c5-11d6-4454-b34c-9f763fbd55a5-fruit_displayed_on_a_stand.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/75e489c5-11d6-4454-b34c-9f763fbd55a5-fruit_displayed_on_a_stand.jpeg"
+        },
+        "PaintingName": "Fruit Displayed on a Stand",
+        "PaintingType": "Still Life - Food",
+        "PaintingYear": 1881,
+        "RecognizeID": "i_531b353005d24",
+        "createdAt": "2014-03-01T02:00:25.756Z",
+        "objectId": "XyHedjalX3",
+        "updatedAt": "2014-03-09T13:51:05.155Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "on1vC5yOPz"
+        },
+        "ArtistID": "on1vC5yOPz",
+        "PaintingDescription": "Dating from the beginning of Monet's career, this view of a street in the old port of Honfleur is a relatively traditional subject painted with great simplicity and directness. Monet's palette of pure, contrasting colors is a radical departure from the traditional practice of building up an overall tonality through delicate gradations of color.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "746b50d3-313f-4816-b742-7f55246ffe37-rue_de_la_bavole_honfleur.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/746b50d3-313f-4816-b742-7f55246ffe37-rue_de_la_bavole_honfleur.jpeg"
+        },
+        "PaintingName": "Rue de la Bavole, Honfleur",
+        "PaintingType": "Landscape - Cityscape",
+        "PaintingYear": 1864,
+        "RecognizeID": "i_531b3543bd1a6",
+        "createdAt": "2014-03-01T02:01:45.425Z",
+        "objectId": "lCzn3HceNO",
+        "updatedAt": "2014-03-09T13:50:16.454Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "EFc2ehgnqv"
+        },
+        "ArtistID": "EFc2ehgnqv",
+        "PaintingDescription": "In June 1889, shortly after his arrival at an asylum in the southern French town of Saint-Rémy, van Gogh painted a riotous study of a flowering hillside. He sent a pen-and-ink copy of the painting to his brother in early July. Months later, in October, the artist found himself without fresh canvas on which to paint and decided to sacrifice the study of wild vegetation to paint this view of the mountainous ravine near the asylum. Recent collaborative research by conservators and curators has revealed the presence of the lost painting beneath the Boston canvas. For more on this discovery, see: http://www.mfa.org/dynamic/sub/ctr_link_url_5023.pdf.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "c775ebb1-0b05-4473-8330-d7193e936721-ravine.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/c775ebb1-0b05-4473-8330-d7193e936721-ravine.jpeg"
+        },
+        "PaintingName": "Ravine",
+        "PaintingType": "Landscape",
+        "PaintingYear": 1889,
+        "RecognizeID": "i_531b3540b534c",
+        "createdAt": "2014-03-01T02:03:05.999Z",
+        "objectId": "xT22wZ8iRA",
+        "updatedAt": "2014-03-09T13:50:57.970Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "W3JeBV3UJe"
+        },
+        "ArtistID": "W3JeBV3UJe",
+        "PaintingDescription": "Lower right: C. Pissarro. 1893\n",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "71f3fa39-5fc0-46ee-8ccb-90279e55e656-two_peasant_women_in_a_meadow.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/71f3fa39-5fc0-46ee-8ccb-90279e55e656-two_peasant_women_in_a_meadow.jpeg"
+        },
+        "PaintingName": "Two Peasant Women in a Meadow (Le Pré)\n",
+        "PaintingType": "Landscape",
+        "PaintingYear": 1893,
+        "RecognizeID": "i_531b35469110d",
+        "createdAt": "2014-03-01T02:04:30.350Z",
+        "objectId": "AfrBzJortD",
+        "updatedAt": "2014-03-09T13:50:52.595Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "2nlVKwxYZw"
+        },
+        "ArtistID": "2nlVKwxYZw",
+        "PaintingDescription": "Lower right: Renoir",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "0474ad8c-d13d-41d3-aa8f-f7a87fba9802-girls_picking_flowers_in_a_meadow.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/0474ad8c-d13d-41d3-aa8f-f7a87fba9802-girls_picking_flowers_in_a_meadow.jpeg"
+        },
+        "PaintingName": "Girls Picking Flowers in a Meadow",
+        "PaintingType": "Genre - Exterior",
+        "PaintingYear": 1890,
+        "RecognizeID": "i_531b353189711",
+        "createdAt": "2014-03-01T02:06:51.044Z",
+        "objectId": "KmREZBrXG7",
+        "updatedAt": "2014-03-09T13:50:46.018Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "YgnyHsNqFy"
+        },
+        "ArtistID": "YgnyHsNqFy",
+        "PaintingDescription": "Mary Stevenson Cassatt, raised near Pittsburgh and first trained as a painter in Philadelphia, became nineteenth-century America’s most modern painter. Like many of her contemporaries, Cassatt felt that her artistic education in the United States was inadequate, and she traveled to Europe soon after the Civil War. She studied in both Italy and France, and by 1873 she had made Paris her home. While most of her compatriots were proud of the education they received in the art schools of the French capital, Cassatt soon tired of the conservative approach taught in those academies and perpetuated by the exhibitions they organized. She felt strongly that painting needed to break free of old methods and adapt to the modern world. \n\nCassatt found the answer to her demand for a new kind of painting in the work of the Impressionists, a small circle of independent French artists. She approved of their disdain for juried exhibitions and soon adopted their experimental techniques and their preference for images of contemporary life. In 1877 Edgar Degas invited her to show her work with the group. Cassatt thus became one of only three women, and the only American, ever to join the French Impressionists.\n\n\n\nIn the Loge was the first of Cassatt’s Impressionist paintings to be displayed in the United States. When it was shown in Boston in 1878, critics described the picture as “striking,” adding that Cassatt’s painting “surpassed the strength of most men.” [1]The canvas, then entitled At the Français—A Sketch, depicts a fashionable lady dressed for an afternoon performance at the Comedie Français, a theater in Paris. Entertainments like the theater, the opera, and the racetrack were extremely popular among Parisians, who enjoyed such diversions not only for the show, but also for the opportunity to see—and to be seen by—their peers. The Impressionists took delight in painting these spectacles of modern life, and the theater, with its dazzling variety of lights and reflections, was an especially appealing subject. Many male artists, including Pierre-Auguste Renoir and Degas, had painted beautiful women in theater boxes, where they appeared as if they were on display in a gilded frame. Cassatt gave her female figure a noticeably more dynamic role, for she peers avidly through her opera glasses at the row of seats across from her. In the background at upper left, a man trains his gaze upon her. The viewer, who sees them both, completes the circle. Cassatt’s painting explores the very act of looking, breaking down the traditional boundaries between the observer and the observed, the audience and the performer.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "bea0766e-e6d3-4ada-9d13-9cfe21d5c40b-in_the_loge.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/bea0766e-e6d3-4ada-9d13-9cfe21d5c40b-in_the_loge.jpeg"
+        },
+        "PaintingName": "In the Loge",
+        "PaintingType": "Figure - Female",
+        "PaintingYear": 1878,
+        "RecognizeID": "i_531b35360f68a",
+        "createdAt": "2014-03-01T02:08:19.229Z",
+        "objectId": "ZZWfDbZCNi",
+        "updatedAt": "2014-03-09T13:50:40.394Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "on1vC5yOPz"
+        },
+        "ArtistID": "on1vC5yOPz",
+        "PaintingDescription": "The Impressionist interest in specific effects of light and weather is evident in Monet's rendering of the exact moment in which the sun struggles to break through a light snowfall. He made a preparatory sketch for this painting; clearly, careful deliberation lay behind his seemingly spontaneous technique. The subject of falling snow and the figures with umbrellas are reminiscent of Japanese woodblock prints, which had a strong influence on Impressionist artists.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "eb3cd263-e2a7-489c-b468-d7322798c8fd-boulevard_saint_denis_argenteuil_in_winter.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/eb3cd263-e2a7-489c-b468-d7322798c8fd-boulevard_saint_denis_argenteuil_in_winter.jpeg"
+        },
+        "PaintingName": "Boulevard Saint-Denis, Argenteuil, in Winter",
+        "PaintingType": "Landscape",
+        "PaintingYear": 1875,
+        "RecognizeID": "i_531b35265df8a",
+        "createdAt": "2014-03-01T02:18:15.692Z",
+        "objectId": "lXqIkITjRY",
+        "updatedAt": "2014-03-09T13:49:50.096Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "on1vC5yOPz"
+        },
+        "ArtistID": "on1vC5yOPz",
+        "PaintingDescription": "Lower right: Claude Monet",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "783e5dcf-27d8-4735-8099-35147c5dd60b-meadow_with_poplars.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/783e5dcf-27d8-4735-8099-35147c5dd60b-meadow_with_poplars.jpeg"
+        },
+        "PaintingName": "Meadow with Poplars",
+        "PaintingType": "Landscape",
+        "PaintingYear": 1875,
+        "RecognizeID": "i_531b353c58deb",
+        "createdAt": "2014-03-01T02:10:11.063Z",
+        "objectId": "PjgU2zk9qA",
+        "updatedAt": "2014-03-09T13:50:11.349Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "on1vC5yOPz"
+        },
+        "ArtistID": "on1vC5yOPz",
+        "PaintingDescription": "Lower right: Claude Monet 1907",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "7baba7e9-5c40-42e6-92b7-08b643d6e2b4-water_lillies.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/7baba7e9-5c40-42e6-92b7-08b643d6e2b4-water_lillies.jpeg"
+        },
+        "PaintingName": "Water Lilies",
+        "PaintingType": "Landscape",
+        "PaintingYear": 1907,
+        "RecognizeID": "i_531b35495bd8f",
+        "createdAt": "2014-03-01T02:19:55.120Z",
+        "objectId": "HPpi5qmC6G",
+        "updatedAt": "2014-03-09T13:49:47.100Z"
+    },
+	{
+        "Artist": {
+            "__type": "Pointer",
+            "className": "Artist",
+            "objectId": "0a6Q18Crlj"
+        },
+        "ArtistID": "0a6Q18Crlj",
+        "PaintingDescription": "Bronze. Figure of a girl ballet dancer. Tulle skirt.",
+        "PaintingFile": {
+            "__type": "File",
+            "name": "3d575a36-d015-42d9-a305-5677001f3c5a-little_fourteen_year_old_dancer.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/3d575a36-d015-42d9-a305-5677001f3c5a-little_fourteen_year_old_dancer.jpeg"
+        },
+        "PaintingName": "Little Fourteen-Year-Old Dancer",
+        "PaintingType": "Figure - Female",
+        "PaintingYear": 1878,
+        "RecognizeID": "i_531b3538a2640",
+        "createdAt": "2014-03-01T02:11:14.663Z",
+        "objectId": "hIpMhXZ5ib",
+        "updatedAt": "2014-03-09T13:50:03.531Z"
+    }
+] }

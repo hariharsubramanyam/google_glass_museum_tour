@@ -1,0 +1,98 @@
+{ "results": [
+	{
+        "Bio": "Paul Cézanne was a French artist and Post-Impressionist painter whose work laid the foundations of the transition from the 19th-century conception of artistic endeavour to a new and radically different world of art in the 20th century",
+        "Name": "Paul Cézanne",
+        "Picture": {
+            "__type": "File",
+            "name": "c03e11b6-0c30-4805-ac5a-536a599b70da-paul_cezanne.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/c03e11b6-0c30-4805-ac5a-536a599b70da-paul_cezanne.jpeg"
+        },
+        "createdAt": "2014-03-08T23:41:01.609Z",
+        "objectId": "NYggKups0r",
+        "updatedAt": "2014-03-08T23:51:28.790Z"
+    },
+	{
+        "Bio": "Gustave Caillebotte was a French painter, member and patron of the group of artists known as Impressionists, though he painted in a much more realistic manner than many other artists in the group.",
+        "Name": "Gustave Caillebotte",
+        "Picture": {
+            "__type": "File",
+            "name": "3daa0719-26b7-48f6-92b6-1715ae26878b-gustave_caillebotte.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/3daa0719-26b7-48f6-92b6-1715ae26878b-gustave_caillebotte.jpeg"
+        },
+        "createdAt": "2014-03-08T23:40:45.241Z",
+        "objectId": "PuzyupVrEp",
+        "updatedAt": "2014-03-08T23:52:06.050Z"
+    },
+	{
+        "Bio": "Vincent Willem van Gogh was a post-Impressionist painter of Dutch origin whose work, notable for its rough beauty, emotional honesty and bold color, had a far-reaching influence on 20th-century art",
+        "Name": "Vincent van Gogh",
+        "Picture": {
+            "__type": "File",
+            "name": "5823e4fc-74d6-4845-b922-bdc2fcd0884e-van_goh.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/5823e4fc-74d6-4845-b922-bdc2fcd0884e-van_goh.jpeg"
+        },
+        "createdAt": "2014-03-08T23:40:35.002Z",
+        "objectId": "EFc2ehgnqv",
+        "updatedAt": "2014-03-08T23:52:42.660Z"
+    },
+	{
+        "Bio": "Camille Pissarro was a Danish-French Impressionist and Neo-Impressionist painter born on the island of St Thomas. His importance resides in his contributions to both Impressionism and Post-Impressionism.",
+        "Name": "Camille Pissarro",
+        "Picture": {
+            "__type": "File",
+            "name": "e795b4f2-5514-45e8-8b79-2d5ea6323e57-camille_pissarro.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/e795b4f2-5514-45e8-8b79-2d5ea6323e57-camille_pissarro.jpeg"
+        },
+        "createdAt": "2014-03-08T23:40:26.929Z",
+        "objectId": "W3JeBV3UJe",
+        "updatedAt": "2014-03-08T23:53:35.566Z"
+    },
+	{
+        "Bio": "Pierre-Auguste Renoir was a French artist who was a leading painter in the development of the Impressionist style.",
+        "Name": "Pierre-Auguste Renoir",
+        "Picture": {
+            "__type": "File",
+            "name": "3544cdcb-f32b-4f52-8fb9-6e0bfe53e806-renoir.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/3544cdcb-f32b-4f52-8fb9-6e0bfe53e806-renoir.jpeg"
+        },
+        "createdAt": "2014-03-08T23:40:20.713Z",
+        "objectId": "2nlVKwxYZw",
+        "updatedAt": "2014-03-08T23:54:45.357Z"
+    },
+	{
+        "Bio": "Mary Stevenson Cassatt was an American painter and printmaker. She lived much of her adult life in France, where she first befriended Edgar Degas and later exhibited among the Impressionists.",
+        "Name": "Mary Stevenson Cassatt",
+        "Picture": {
+            "__type": "File",
+            "name": "c9bd2475-532d-49d4-80f9-46bcdcf48fbb-mary.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/c9bd2475-532d-49d4-80f9-46bcdcf48fbb-mary.jpeg"
+        },
+        "createdAt": "2014-03-08T23:40:10.530Z",
+        "objectId": "YgnyHsNqFy",
+        "updatedAt": "2014-03-09T13:23:57.749Z"
+    },
+	{
+        "Bio": "Edgar Degas; born Hilaire-Germain-Edgar De Gas; was a French artist famous for his paintings, sculptures, prints, and drawings. He is especially identified with the subject of dance; more than half of his works depict dancers.",
+        "Name": "Edgar Degas",
+        "Picture": {
+            "__type": "File",
+            "name": "1aa2e9cc-20e3-43cd-9783-7a81cdfaa8df-edgar_degas.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/1aa2e9cc-20e3-43cd-9783-7a81cdfaa8df-edgar_degas.jpeg"
+        },
+        "createdAt": "2014-03-08T23:39:54.232Z",
+        "objectId": "0a6Q18Crlj",
+        "updatedAt": "2014-03-09T13:24:11.351Z"
+    },
+	{
+        "Bio": "Oscar-Claude Monet was a founder of French Impressionist painting, and the most consistent and prolific practitioner of the movement's philosophy of expressing one's perceptions before nature, especially as applied to plein-air landscape painting.",
+        "Name": "Claude Monet",
+        "Picture": {
+            "__type": "File",
+            "name": "d880c03d-9d5a-41b7-a52f-4ac3acab1b38-monet.jpeg",
+            "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/d880c03d-9d5a-41b7-a52f-4ac3acab1b38-monet.jpeg"
+        },
+        "createdAt": "2014-03-08T23:39:39.877Z",
+        "objectId": "on1vC5yOPz",
+        "updatedAt": "2014-03-09T13:24:36.916Z"
+    }
+] }

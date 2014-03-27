@@ -25,8 +25,43 @@ public final class R {
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int map=0x7f020001;
+        public static final int at_the_races_in_the_countryside=0x7f020000;
+        public static final int ballet_dancer_with_arms_crossed=0x7f020001;
+        public static final int boulevard_saint_denis_argenteuil_in_winter=0x7f020002;
+        public static final int camille_pissarro=0x7f020003;
+        public static final int cap_d_antibes_mistral=0x7f020004;
+        public static final int children_on_the_seashore_guernsey=0x7f020005;
+        public static final int edgar_degas=0x7f020006;
+        public static final int entrance_to_the_village_of_vetheuil_in_winter=0x7f020007;
+        public static final int flower_beds_at_vetheuil=0x7f020008;
+        public static final int fruit_and_jug_on_a_table=0x7f020009;
+        public static final int fruit_displayed_on_a_stand=0x7f02000a;
+        public static final int girls_picking_flowers_in_a_meadow=0x7f02000b;
+        public static final int grand_canal_venice=0x7f02000c;
+        public static final int gustave_caillebotte=0x7f02000d;
+        public static final int house_at_auvers=0x7f02000e;
+        public static final int ic_launcher=0x7f02000f;
+        public static final int in_the_loge=0x7f020010;
+        public static final int landscape_on_the_coast_near_menton=0x7f020011;
+        public static final int little_fourteen_year_old_dancer=0x7f020012;
+        public static final int man_at_his_bath=0x7f020013;
+        public static final int map=0x7f020014;
+        public static final int mary=0x7f020015;
+        public static final int meadow_with_poplars=0x7f020016;
+        public static final int mixed_flowers_in_an_earthenware_pot=0x7f020017;
+        public static final int monet=0x7f020018;
+        public static final int paul_cezanne=0x7f020019;
+        public static final int racehorses_at_longchamp=0x7f02001a;
+        public static final int ravine=0x7f02001b;
+        public static final int renoir=0x7f02001c;
+        public static final int rouen_cathedral=0x7f02001d;
+        public static final int rue_de_la_bavole_honfleur=0x7f02001e;
+        public static final int ships_in_a_harbor=0x7f02001f;
+        public static final int two_peasant_women_in_a_meadow=0x7f020020;
+        public static final int valley_of_the_creuse=0x7f020021;
+        public static final int van_goh=0x7f020022;
+        public static final int water_lillies=0x7f020023;
+        public static final int woman_with_a_parasol_and_a_small_child_on_a_sunlight_hillside=0x7f020024;
     }
     public static final class id {
         public static final int action_artist=0x7f0a0007;
