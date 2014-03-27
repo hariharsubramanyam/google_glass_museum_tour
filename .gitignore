@@ -2,3 +2,4 @@ APIKeys.java
 gen/
 res/drawable-mdpi
 bin/
+.classpath
