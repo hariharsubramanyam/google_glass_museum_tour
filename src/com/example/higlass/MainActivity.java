@@ -8,7 +8,6 @@ package com.example.higlass;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.List;
-import java.util.Locale;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,8 +22,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.speech.tts.TextToSpeech;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -42,7 +39,7 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-public class MainActivity extends Activity implements TextToSpeech.OnInitListener{
+public class MainActivity extends Activity{
 
 	/**
 	 * Use the class name as a tag when logging
@@ -81,11 +78,6 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	private String mPaintingID;
 	
 	/**
-	 * The text to speech service (used to read the painting description out loud to the user)
-	 */
-	private TextToSpeech tts;
-	
-	/**
 	 * When the activity is created, set up the gesture detector and text to speech, then take a picture of whatever the user is looking at
 	 */
 	@Override
@@ -99,8 +91,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		View v = getLayoutInflater().inflate(R.layout.activity_main, null, false);
 		mTextView = (TextView)v.findViewById(R.id.txtMain);
 		
-		// Set up the text to speech and the gesture recognizer
-		tts = new TextToSpeech(this,this);
+		// Set up the gesture recognizer
 		mGestureDetector = createGestureDetector(this);
 		
 		// Set the view
@@ -131,7 +122,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if(item.getItemId() == R.id.action_repeat){
 			// Read the description again
-			speakOut(mDescription);
+			TextToSpeechController.getInstance(this).speak(mDescription);
 		}else if(item.getItemId() == R.id.action_artist){
 			// Launch an intent to get information about the artist with given ID
 			Intent intent = new Intent(this, ArtistActivity.class);
@@ -195,6 +186,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 	 */
 	private void onReceiveImageResponse(String response){
 		final String id;
+		final Context ctx = this;
 		try {
 			// Get the image ID
 			id = getIDFromAPIResponse(new JSONObject(response));
@@ -224,7 +216,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 								mTextView.setText(displayName);
 								
 								// Read aloud the description of the painting
-								speakOut(mDescription);
+								TextToSpeechController.getInstance(ctx).speak(mDescription);
 							} catch (ParseException e1) {
 								e1.printStackTrace();
 							}
@@ -311,34 +303,10 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 		return null;
 	}
 	
-	
-	// HOUSEKEEPING METHODS FOR THE TEXT TO SPEECH
-	
 	@Override
 	protected void onDestroy() {
-		if(tts != null){
-			tts.stop();
-			tts.shutdown();
-		}
+		TextToSpeechController.getInstance(this).stopTTS();
 		super.onDestroy();
 	}
-
-	@Override
-	public void onInit(int status) {
-        if (status == TextToSpeech.SUCCESS) {
-            int result = tts.setLanguage(Locale.US);
-            if (result == TextToSpeech.LANG_MISSING_DATA
-                    || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                Log.e("TTS", "This Language is not supported");
-            }
-        } else {
-            Log.e("TTS", "Initilization Failed!");
-        }
- 
-	}
-	
-	private void speakOut(String text) {
-        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-    }
 
 }

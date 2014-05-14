@@ -12,7 +12,7 @@ public class TestActivity extends Activity{
 		GlobalData globalData = GlobalData.getInstance(this);
 		Card card = new Card(this);
 		card.setText(globalData.getArtists().get(0).name + " and " + globalData.getPaintings().get(0).name);
-		setContentView(card.toView());
+		setContentView(card.getView());
 	}
 
 }

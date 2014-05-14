@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-import com.google.gson.Gson;
-
 import android.content.Context;
+
+import com.google.gson.Gson;
 
 public class GlobalData {
 	private static GlobalData instance;

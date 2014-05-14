@@ -4,7 +4,7 @@
         "Name": "Paul Cézanne",
         "Picture": {
             "__type": "File",
-            "name": "c03e11b6-0c30-4805-ac5a-536a599b70da-paul_cezanne.jpeg",
+            "name": "paul_cezanne.jpeg",
             "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/c03e11b6-0c30-4805-ac5a-536a599b70da-paul_cezanne.jpeg"
         },
         "createdAt": "2014-03-08T23:41:01.609Z",
@@ -16,7 +16,7 @@
         "Name": "Gustave Caillebotte",
         "Picture": {
             "__type": "File",
-            "name": "3daa0719-26b7-48f6-92b6-1715ae26878b-gustave_caillebotte.jpeg",
+            "name": "gustave_caillebotte.jpeg",
             "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/3daa0719-26b7-48f6-92b6-1715ae26878b-gustave_caillebotte.jpeg"
         },
         "createdAt": "2014-03-08T23:40:45.241Z",
@@ -28,7 +28,7 @@
         "Name": "Vincent van Gogh",
         "Picture": {
             "__type": "File",
-            "name": "5823e4fc-74d6-4845-b922-bdc2fcd0884e-van_goh.jpeg",
+            "name": "van_goh.jpeg",
             "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/5823e4fc-74d6-4845-b922-bdc2fcd0884e-van_goh.jpeg"
         },
         "createdAt": "2014-03-08T23:40:35.002Z",
@@ -40,7 +40,7 @@
         "Name": "Camille Pissarro",
         "Picture": {
             "__type": "File",
-            "name": "e795b4f2-5514-45e8-8b79-2d5ea6323e57-camille_pissarro.jpeg",
+            "name": "camille_pissarro.jpeg",
             "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/e795b4f2-5514-45e8-8b79-2d5ea6323e57-camille_pissarro.jpeg"
         },
         "createdAt": "2014-03-08T23:40:26.929Z",
@@ -52,7 +52,7 @@
         "Name": "Pierre-Auguste Renoir",
         "Picture": {
             "__type": "File",
-            "name": "3544cdcb-f32b-4f52-8fb9-6e0bfe53e806-renoir.jpeg",
+            "name": "renoir.jpeg",
             "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/3544cdcb-f32b-4f52-8fb9-6e0bfe53e806-renoir.jpeg"
         },
         "createdAt": "2014-03-08T23:40:20.713Z",
@@ -64,7 +64,7 @@
         "Name": "Mary Stevenson Cassatt",
         "Picture": {
             "__type": "File",
-            "name": "c9bd2475-532d-49d4-80f9-46bcdcf48fbb-mary.jpeg",
+            "name": "mary.jpeg",
             "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/c9bd2475-532d-49d4-80f9-46bcdcf48fbb-mary.jpeg"
         },
         "createdAt": "2014-03-08T23:40:10.530Z",
@@ -76,7 +76,7 @@
         "Name": "Edgar Degas",
         "Picture": {
             "__type": "File",
-            "name": "1aa2e9cc-20e3-43cd-9783-7a81cdfaa8df-edgar_degas.jpeg",
+            "name": "edgar_degas.jpeg",
             "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/1aa2e9cc-20e3-43cd-9783-7a81cdfaa8df-edgar_degas.jpeg"
         },
         "createdAt": "2014-03-08T23:39:54.232Z",
@@ -88,7 +88,7 @@
         "Name": "Claude Monet",
         "Picture": {
             "__type": "File",
-            "name": "d880c03d-9d5a-41b7-a52f-4ac3acab1b38-monet.jpeg",
+            "name": "monet.jpeg",
             "url": "http://files.parse.com/980e1d59-4fcf-4d9f-a9df-6c696a3ad26d/d880c03d-9d5a-41b7-a52f-4ac3acab1b38-monet.jpeg"
         },
         "createdAt": "2014-03-08T23:39:39.877Z",

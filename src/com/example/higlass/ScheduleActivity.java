@@ -147,4 +147,6 @@ public class ScheduleActivity extends Activity{
 		});
 		return gestureDetector;
 	}
+	
+	
 }
