@@ -142,7 +142,7 @@ public class MainActivity extends Activity implements OnInitListener{
 			intent.putExtra(ArtistActivity.EXTRA_ARTIST_ID, mArtistID);
 			startActivity(intent);
 		}else if(item.getItemId() == R.id.action_save){
-			new Schedule(this).addPainting(this.mPaintingID);
+//			new Schedule(this).addPainting(this.mPaintingID);
 			Intent intent = new Intent(this, ScheduleActivity.class);
 			intent.putExtra(ScheduleActivity.EXTRA_SCHEDULE_INDEX, 0);
 			intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY);
@@ -218,6 +218,7 @@ public class MainActivity extends Activity implements OnInitListener{
 							mDescription = displayList.get(0).getString("PaintingDescription");
 							mArtistID = displayList.get(0).getString("ArtistID");
 							mPaintingID = displayList.get(0).getObjectId();
+							new Schedule(ctx).addPainting(mPaintingID);
 							byte[] imageBytes;
 							try {
 								// Set the painting as the background of the screen
