@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -55,8 +56,7 @@ public class ScheduleActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		mGestureDetector = createGestureDetector(this);
 		View v = getLayoutInflater().inflate(R.layout.activity_schedule, null);
-		this.mTextView = (TextView)v.findViewById(R.id.txt_schedule_item);
-		
+		this.mTextView = (TextView)v.findViewById(R.id.txt_schedule_item);	
 		
 		if(getIntent() != null){
 			this.mIndex = getIntent().getExtras().getInt(ScheduleActivity.EXTRA_SCHEDULE_INDEX, 0);
@@ -69,6 +69,8 @@ public class ScheduleActivity extends Activity{
 		String paintingID = this.mSchedule.getPainting(this.mIndex);
 		this.mTextView.setText("Adding painting to schedule...");
 		
+		Log.d(TAG, "The painting ID is " + paintingID);
+		
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Painting");
 		query.getInBackground(paintingID, new GetCallback<ParseObject>() {
 		  public void done(ParseObject object, ParseException e) {
@@ -78,13 +80,12 @@ public class ScheduleActivity extends Activity{
 				try {
 					imageBytes = ((ParseFile)(object.get("PaintingFile"))).getData();
 					Bitmap b = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
-					((LinearLayout)findViewById(R.id.linear_schedule_background)).setBackgroundDrawable(new BitmapDrawable(getResources(),b));
+					((LinearLayout)findViewById(R.id.linear_schedule_background)).setBackground(new BitmapDrawable(getResources(),b));
 				} catch (ParseException e1) {
 					e1.printStackTrace();
 				}
-				
 		    } else {
-		      e.printStackTrace();
+		    	e.printStackTrace();
 		    }
 		  }
 		});

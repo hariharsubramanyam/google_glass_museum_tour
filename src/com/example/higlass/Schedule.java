@@ -54,6 +54,7 @@ public class Schedule {
 	}
 	
 	public String getPainting(int index){
+		while(this.mPaintingIDs.remove(null)){}
 		index = Math.min(Math.max(0, index), this.mPaintingIDs.size()-1);
 		return this.mPaintingIDs.get(index);
 	}
