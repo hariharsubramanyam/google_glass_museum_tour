@@ -5,15 +5,20 @@
 
 package com.example.higlass;
 
+import java.util.Locale;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.parse.Parse;
 
-public class ArtistActivity extends Activity{
+public class ArtistActivity extends Activity implements OnInitListener{
 	
 	/**
 	 * Tag for logging
@@ -35,6 +40,11 @@ public class ArtistActivity extends Activity{
 	 * String which contains the artist's biography (spoken aloud by the text-to-speech service)
 	 */
 	private String mBio;
+	
+	/**
+	 * The text to speech for reading the user's location
+	 */
+	private TextToSpeech tts;
 
 	
 	/**
@@ -63,6 +73,10 @@ public class ArtistActivity extends Activity{
 		GlobalData globalData = GlobalData.getInstance(this);
 		Artist artist = globalData.getArtistForID(artistID);
 		
+		if(tts == null){
+			tts = new TextToSpeech(this, this);
+		}
+		
 		// Set the fields
 		mTextView.setText(artist.name);
 		mBio = artist.bio;
@@ -70,13 +84,41 @@ public class ArtistActivity extends Activity{
 		Log.d(TAG, artist.picture.replace(".jpeg", ""));
 		findViewById(R.id.linear_main).setBackgroundResource(drawableId);	
 		// Read aloud the biography
-		TextToSpeechController.getInstance(this).speak(mBio);
 	}
 	
 	@Override
 	protected void onDestroy() {
-		TextToSpeechController.getInstance(this).stopTTS();
+		if (tts != null) {
+	        tts.stop();
+	        tts.shutdown();
+	    }
 		super.onDestroy();
+	}
+	
+	private void speakIt(String someThing) {
+		tts.speak(someThing, TextToSpeech.QUEUE_ADD, null);
+	}
+
+	@Override
+	public void onInit(int status) {
+	    if (status == TextToSpeech.SUCCESS) {
+
+	        if (tts == null) {
+	            tts = new TextToSpeech(this, this);
+	            tts.setSpeechRate(0.8f);
+	        }
+	        int result = tts.setLanguage(Locale.ENGLISH);
+
+	        if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+	            Log.e("TTS", "This Language is not supported");
+	            Intent installIntent = new Intent();
+	            installIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	            installIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+	            startActivity(installIntent);
+	        }
+	        
+	        speakIt(mBio);
+	    }
 	}
 	
 }

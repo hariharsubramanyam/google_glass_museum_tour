@@ -8,6 +8,7 @@ package com.example.higlass;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.List;
+import java.util.Locale;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,6 +23,9 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -39,7 +43,7 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-public class MainActivity extends Activity{
+public class MainActivity extends Activity implements OnInitListener{
 
 	/**
 	 * Use the class name as a tag when logging
@@ -78,6 +82,11 @@ public class MainActivity extends Activity{
 	private String mPaintingID;
 	
 	/**
+	 * Text to speech for description
+	 */
+	private TextToSpeech tts;
+	
+	/**
 	 * When the activity is created, set up the gesture detector and text to speech, then take a picture of whatever the user is looking at
 	 */
 	@Override
@@ -93,6 +102,10 @@ public class MainActivity extends Activity{
 		
 		// Set up the gesture recognizer
 		mGestureDetector = createGestureDetector(this);
+		
+		if(tts == null){
+			tts = new TextToSpeech(this, this);
+		}
 		
 		// Set the view
 		setContentView(v);
@@ -122,7 +135,7 @@ public class MainActivity extends Activity{
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if(item.getItemId() == R.id.action_repeat){
 			// Read the description again
-			TextToSpeechController.getInstance(this).speak(mDescription);
+			speakIt(mDescription);
 		}else if(item.getItemId() == R.id.action_artist){
 			// Launch an intent to get information about the artist with given ID
 			Intent intent = new Intent(this, ArtistActivity.class);
@@ -166,7 +179,7 @@ public class MainActivity extends Activity{
 				Bitmap b = BitmapFactory.decodeFile(IMAGE_FILE_NAME);
 				if(b != null){
 					// Set the background of the screen to be the image
-					((LinearLayout)findViewById(R.id.linear_main)).setBackgroundDrawable(new BitmapDrawable(getResources(),b));
+					((LinearLayout)findViewById(R.id.linear_main)).setBackground(new BitmapDrawable(getResources(),b));
 					// If the ItraffApi (i.e. the Recognize.im API) is available,
 					if(ItraffApi.isOnline(this)){
 						// prepare the photo and send it to the API for recognition (the callback is onReceiveImageResponse)
@@ -210,13 +223,13 @@ public class MainActivity extends Activity{
 								// Set the painting as the background of the screen
 								imageBytes = ((ParseFile)(displayList.get(0).get("PaintingFile"))).getData();
 								Bitmap b = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
-								((LinearLayout)findViewById(R.id.linear_main)).setBackgroundDrawable(new BitmapDrawable(getResources(),b));
+								((LinearLayout)findViewById(R.id.linear_main)).setBackground(new BitmapDrawable(getResources(),b));
 								
 								// Display the painting's name
 								mTextView.setText(displayName);
 								
 								// Read aloud the description of the painting
-								TextToSpeechController.getInstance(ctx).speak(mDescription);
+								speakIt(mDescription);
 							} catch (ParseException e1) {
 								e1.printStackTrace();
 							}
@@ -305,8 +318,36 @@ public class MainActivity extends Activity{
 	
 	@Override
 	protected void onDestroy() {
-		TextToSpeechController.getInstance(this).stopTTS();
+		if (tts != null) {
+	        tts.stop();
+	        tts.shutdown();
+	    }
 		super.onDestroy();
+	}
+	
+	private void speakIt(String someThing) {
+		tts.speak(someThing, TextToSpeech.QUEUE_ADD, null);
+	}
+
+	@Override
+	public void onInit(int status) {
+		if (status == TextToSpeech.SUCCESS) {
+
+	        if (tts == null) {
+	            tts = new TextToSpeech(this, this);
+	            tts.setSpeechRate(0.8f);
+	        }
+	        int result = tts.setLanguage(Locale.ENGLISH);
+
+	        if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+	            Log.e("TTS", "This Language is not supported");
+	            Intent installIntent = new Intent();
+	            installIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	            installIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+	            startActivity(installIntent);
+	        }
+	    }
+		
 	}
 
 }
